@@ -47,7 +47,7 @@ class Board:
         """
         return 0 <= x < self.size and 0 <= y < self.size and self.grid[x][y] == '.'
 
-    def fire():
+    def fire(self, x, y):
         """
         returns True if there is a ship at that location, otherwise False. 
         if ship present at location displays 'X'. Otherwise, it sets the tile to '-'.
@@ -59,8 +59,10 @@ class Board:
         else:
             self.grid[x][y] = '-'
             return False
-            
-    def get_valid_coordinates():
+
+    def get_valid_coordinates(prompt, board):
+        """
+        """
         while True:
             try:
                 x, y = input(prompt).split(',')
@@ -70,6 +72,10 @@ class Board:
                 else:
                     return x, y
             except ValueError:
-                print('Invalid input. Please enter two integers separated by a comma.')
+                print('Invalid input. Please enter two integers 0-5 separated by a comma.')
     
-    def play_game():              
+    def play_game():
+        size = 5
+        player_name = input('Please enter your name: ')
+        player_board = Board(size, player_name, 'player board')
+        computer_board = Board(size, 'Computer', 'computer board')            
