@@ -25,5 +25,13 @@ class Board:
         for i in range(self.size):
             s += f'{i} |{"|".join(self.grid[i])}|\n'
         return s
-    
+
+    def add_ship(self, x, y):
+        """
+        adds a ship at on the board by 
+        setting the corresponding tile on the grid to 'O'
+        """
+        self.ships.append((x, y))
+        self.grid[x][y] = 'O'
+
         
