@@ -78,4 +78,20 @@ class Board:
         size = 5
         player_name = input('Please enter your name: ')
         player_board = Board(size, player_name, 'player board')
-        computer_board = Board(size, 'Computer', 'computer board')            
+        computer_board = Board(size, 'Computer', 'computer board')
+
+        # add player's ships
+        for i in range(5):
+            while True:
+                x, y = random.randint(0, size-1), random.randint(0, size-1)
+                if player_board.is_valid(x, y):
+                    break
+            player_board.mark_ship(x, y)
+
+        # add computer's ships
+        for i in range(5):
+            while True:
+                x, y = random.randint(0, size-1), random.randint(0, size-1)
+                if computer_board.is_valid(x, y):
+                    break
+            computer_board.mark_ship(x, y)            
