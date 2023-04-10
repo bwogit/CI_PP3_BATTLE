@@ -1,5 +1,6 @@
 from random import randint
 
+
 class Board:
     """
     Main board class.
@@ -45,5 +46,7 @@ class Board:
         returns true if location is witihn bounds
         """
         return 0 <= x < self.size and 0 <= y < self.size and self.grid[x][y] == '.'
-    
-                   
+
+    def fire():
+    def get_valid_coordinates():
+    def play_game():              
