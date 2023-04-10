@@ -29,11 +29,11 @@ class Board:
 
     def mark_ship(self, x, y):
         """
-        adds a ship at on the board by 
+        adds a ship at on the board by
         setting the corresponding tile on the grid to 'O'
         """
         self.ships.append((x, y))
-        self.grid[x][y] = 'O' 
+        self.grid[x][y] = 'O'
 
     def has_ship(self, x, y):
         """
@@ -74,7 +74,8 @@ def get_valid_coordinate(prompt, board):
                 return x, y
         except ValueError:
             print('Invalid input. Please enter two integers 0-5 separated by a comma.')
-    
+
+
 def play_game():
     size = 5
     player_name = input('Please enter your name: ')
@@ -117,4 +118,4 @@ def play_game():
             print('Computer misses...')
 
 
-play_game()                
+play_game()
