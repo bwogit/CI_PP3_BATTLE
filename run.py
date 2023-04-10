@@ -14,3 +14,16 @@ class Board:
         self.ships = []
         self.player_name = player_name
         self.board_type = board_type
+
+    def __str__(self):
+        """
+        returns a string representation of the board, 
+        which is printed when the board needs to be displayed
+        """
+        s = f'{self.player_name} {self.board_type}\n'
+        s += '   ' + ' '.join(str(i) for i in range(self.size)) + '\n'
+        for i in range(self.size):
+            s += f'{i} |{"|".join(self.grid[i])}|\n'
+        return s
+    
+        
