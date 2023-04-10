@@ -45,12 +45,14 @@ class Board:
         """
         returns true if location is witihn bounds
         """
-        return 0 <= x < self.size and 0 <= y < self.size and self.grid[x][y] == '.'
+        return 0 <= x < self.size and 0 <= y \
+            < self.size and self.grid[x][y] == '.'
 
     def fire(self, x, y):
         """
-        returns True if there is a ship at that location, otherwise False. 
-        if ship present at location displays 'X'. Otherwise, it sets the tile to '-'.
+        returns True if there is a ship at that location, otherwise False.
+        if ship present at location displays 'X'.
+        Otherwise, it sets the tile to '-'.
         """
         if (x, y) in self.ships:
             self.ships.remove((x, y))
@@ -73,7 +75,8 @@ def get_valid_coordinate(prompt, board):
             else:
                 return x, y
         except ValueError:
-            print('Invalid input. Please enter two integers 0-5 separated by a comma.')
+            print('Invalid input. Please enter two integers \
+                0-5 separated by a comma.')
 
 
 def play_game():
@@ -101,7 +104,8 @@ def play_game():
     # play the game
     while player_board.ships and computer_board.ships:
         print(player_board)
-        x, y = get_valid_coordinate(f'{player_name}, enter the coordinates to shoot: ', computer_board)
+        x, y = get_valid_coordinate(f'{player_name}, \
+            enter coordinates: ', computer_board)
         player_hit = computer_board.fire(x, y)
         if player_hit:
             print('Hit!')
