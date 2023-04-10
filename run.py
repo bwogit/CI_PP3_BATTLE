@@ -77,7 +77,7 @@ def get_valid_coordinate(prompt, board):
                 return x, y
         except ValueError:
             print('Invalid input. Please enter two integers \
-                0-5 separated by a comma.')
+               between 0-5 separated by a comma.')
 
 
 def play_game():
