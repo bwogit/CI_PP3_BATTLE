@@ -33,5 +33,17 @@ class Board:
         """
         self.ships.append((x, y))
         self.grid[x][y] = 'O' 
-        
-           
+
+    def has_ship(self, x, y):
+        """
+        returns true if has a ship on it
+        """
+        return (x, y) in self.ships
+
+    def is_valid(self, x, y):
+        """
+        returns true if location is witihn bounds
+        """
+        return 0 <= x < self.size and 0 <= y < self.size and self.grid[x][y] == '.'
+    
+                   
