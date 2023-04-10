@@ -59,5 +59,17 @@ class Board:
         else:
             self.grid[x][y] = '-'
             return False
+            
     def get_valid_coordinates():
+        while True:
+            try:
+                x, y = input(prompt).split(',')
+                x, y = int(x), int(y)
+                if not board.is_valid(x, y):
+                    print('Invalid coordinates.')
+                else:
+                    return x, y
+            except ValueError:
+                print('Invalid input. Please enter two integers separated by a comma.')
+    
     def play_game():              
