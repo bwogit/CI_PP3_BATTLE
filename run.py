@@ -65,7 +65,10 @@ class Board:
 
 def get_valid_coordinate(prompt, board):
     """
-    fffff
+    function takes a prompt and a board and repeatedly \
+    prompts the user to enter valid coordinates\
+    until valid coordinates are entered.\
+    It returns the coordinates as a tuple.
     """
     while True:
         try:
@@ -82,7 +85,9 @@ def get_valid_coordinate(prompt, board):
 
 def play_game():
     """
-    aaaaaa
+    Main function. Setys up and plays. Initialises player and board\
+    Adds ships to the board gane and enters a loop where comuter\
+    and player take turns unil no more ships
     """
     size = 5
     player_name = input('Please enter your name: ')
