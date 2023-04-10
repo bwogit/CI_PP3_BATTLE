@@ -18,7 +18,7 @@ class Board:
 
     def __str__(self):
         """
-        returns a string representation of the board, 
+        returns a string representation of the board,
         which is printed when the board needs to be displayed
         """
         s = f'{self.player_name} {self.board_type}\n'
@@ -65,6 +65,7 @@ class Board:
 
 def get_valid_coordinate(prompt, board):
     """
+    fffff
     """
     while True:
         try:
@@ -80,6 +81,9 @@ def get_valid_coordinate(prompt, board):
 
 
 def play_game():
+    """
+    aaaaaa
+    """
     size = 5
     player_name = input('Please enter your name: ')
     player_board = Board(size, player_name, 'player board')
