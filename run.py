@@ -26,12 +26,12 @@ class Board:
             s += f'{i} |{"|".join(self.grid[i])}|\n'
         return s
 
-    def add_ship(self, x, y):
+    def mark_ship(self, x, y):
         """
         adds a ship at on the board by 
         setting the corresponding tile on the grid to 'O'
         """
         self.ships.append((x, y))
-        self.grid[x][y] = 'O'
-
+        self.grid[x][y] = 'O' 
         
+           
