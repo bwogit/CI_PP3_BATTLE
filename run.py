@@ -48,5 +48,16 @@ class Board:
         return 0 <= x < self.size and 0 <= y < self.size and self.grid[x][y] == '.'
 
     def fire():
+        """
+        returns True if there is a ship at that location, otherwise False. 
+        if ship present at location displays 'X'. Otherwise, it sets the tile to '-'.
+        """
+        if (x, y) in self.ships:
+            self.ships.remove((x, y))
+            self.grid[x][y] = 'X'
+            return True
+        else:
+            self.grid[x][y] = '-'
+            return False
     def get_valid_coordinates():
     def play_game():              
