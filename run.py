@@ -1,4 +1,4 @@
-from random import randint
+import random
 
 
 class Board:
@@ -60,38 +60,61 @@ class Board:
             self.grid[x][y] = '-'
             return False
 
-    def get_valid_coordinates(prompt, board):
-        """
-        """
-        while True:
-            try:
-                x, y = input(prompt).split(',')
-                x, y = int(x), int(y)
-                if not board.is_valid(x, y):
-                    print('Invalid coordinates.')
-                else:
-                    return x, y
-            except ValueError:
-                print('Invalid input. Please enter two integers 0-5 separated by a comma.')
+
+def get_valid_coordinate(prompt, board):
+    """
+    """
+    while True:
+        try:
+            x, y = input(prompt).split(',')
+            x, y = int(x), int(y)
+            if not board.is_valid(x, y):
+                print('Invalid coordinates.')
+            else:
+                return x, y
+        except ValueError:
+            print('Invalid input. Please enter two integers 0-5 separated by a comma.')
     
-    def play_game():
-        size = 5
-        player_name = input('Please enter your name: ')
-        player_board = Board(size, player_name, 'player board')
-        computer_board = Board(size, 'Computer', 'computer board')
+def play_game():
+    size = 5
+    player_name = input('Please enter your name: ')
+    player_board = Board(size, player_name, 'player board')
+    computer_board = Board(size, 'Computer', 'computer board')
 
-        # add player's ships
-        for i in range(5):
-            while True:
-                x, y = random.randint(0, size-1), random.randint(0, size-1)
-                if player_board.is_valid(x, y):
-                    break
-            player_board.mark_ship(x, y)
+    # add player's ships
+    for i in range(5):
+        while True:
+            x, y = random.randint(0, size-1), random.randint(0, size-1)
+            if player_board.is_valid(x, y):
+                break
+        player_board.mark_ship(x, y)
 
-        # add computer's ships
-        for i in range(5):
-            while True:
-                x, y = random.randint(0, size-1), random.randint(0, size-1)
-                if computer_board.is_valid(x, y):
-                    break
-            computer_board.mark_ship(x, y)            
+    # add computer's ships
+    for i in range(5):
+        while True:
+            x, y = random.randint(0, size-1), random.randint(0, size-1)
+            if computer_board.is_valid(x, y):
+                break
+        computer_board.mark_ship(x, y)
+
+    # play the game
+    while player_board.ships and computer_board.ships:
+        print(player_board)
+        x, y = get_valid_coordinate(f'{player_name}, enter the coordinates to shoot: ', computer_board)
+        player_hit = computer_board.fire(x, y)
+        if player_hit:
+            print('Hit!')
+        else:
+            print('Miss...')
+        x, y = random.randint(0, size-1), random.randint(0, size-1)
+        while not player_board.is_valid(x, y):
+            x, y = random.randint(0, size-1), random.randint(0, size-1)
+        computer_hit = player_board.fire(x, y)
+        print(f'Computer shoots at ({x},{y})')
+        if computer_hit:
+            print('Computer hits!')
+        else:
+            print('Computer misses...')
+
+
+play_game()                
