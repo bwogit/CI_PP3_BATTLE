@@ -5,7 +5,7 @@ from google.oauth2.service_account import Credentials
 
 def authenticate():
     """
-    authentication
+    authentication function. 
     """
 
     # Set up Google Sheets credentials
@@ -29,6 +29,12 @@ def login(username, password):
     """
     Authenticate with Google Sheets and get the auth_dict worksheet
     """
+    # Check for illegal or blank characters in the username and password
+    illegal_chars = [' ', '\t', '\n', '#', '$', '%', '&', '*', '+', '/', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '`', '{', '|', '}', '~']
+    for char in username:
+        if char in illegal_chars:
+            print('Invalid username. Username cannot contain spaces, tabs, or special characters.')
+            return False
     auth_dict_worksheet = authenticate()
     # Get all the rows in the worksheet as a list of dictionaries
     rows = auth_dict_worksheet.get_all_records()
