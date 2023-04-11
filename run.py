@@ -1,4 +1,16 @@
 import random
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+
+# Set up Google Sheets credentials
+scope = ['https://spreadsheets.google.com/feeds',
+         'https://www.googleapis.com/auth/drive']
+creds = ServiceAccountCredentials.from_json_keyfile_name('creds.json', scope)
+client = gspread.authorize(creds)
+
+# Load the dictionary from Google Sheets
+sheet = client.open('Battleship').auth
+auth_dict = {row[0]: row[1] for row in sheet.get_all_values()}
 
 
 class Board:
