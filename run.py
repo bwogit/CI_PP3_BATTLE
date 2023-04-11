@@ -13,9 +13,9 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('Battleship')
 
-# Load the dictionary from Google Sheets
-verify = SHEET.worksheet('auth_dict')
-auth_dict = {row[0]: row[1] for row in verify.get_all_values()}
+# Get the auth_dict worksheet
+auth_dict = SHEET.worksheet('auth_dict')
+
 
 
 class Board:
