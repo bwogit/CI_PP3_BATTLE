@@ -1,12 +1,14 @@
 import random
 import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+from google.oauth2.service_account import credentials
 
 # Set up Google Sheets credentials
-scope = ['https://spreadsheets.google.com/feeds',
-         'https://www.googleapis.com/auth/drive']
-creds = ServiceAccountCredentials.from_json_keyfile_name('creds.json', scope)
-client = gspread.authorize(creds)
+SCOPE = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
+    ]
+CREDS = Credentials.from_service_account_file('creds.json')
 
 # Load the dictionary from Google Sheets
 sheet = client.open('Battleship').auth
