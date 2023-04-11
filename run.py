@@ -4,6 +4,9 @@ from google.oauth2.service_account import Credentials
 
 
 def authenticate():
+    """
+    authentication
+    """
 
     # Set up Google Sheets credentials
     SCOPE = [
@@ -129,7 +132,19 @@ def play_game():
     and player take turns unil no more ships
     """
     size = 5
-    player_name = input('Please enter your name:\n ')
+
+    # Ask for username and password
+    username = input('Please enter your username: \n ')
+    password = input('Please enter your password: \n')
+    
+    # Authenticate user
+    if login(username, password):
+        print('Login successful! Starting the game...')
+    else:
+        print('Invalid credentials. Try again later.')
+        return
+    
+    player_name = username
     player_board = Board(size, player_name, 'player board')
     computer_board = Board(size, 'Computer', 'computer board')
 
@@ -171,5 +186,4 @@ def play_game():
 
 
 authenticate()
-login(username,password)
 play_game()
