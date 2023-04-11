@@ -14,8 +14,8 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('Battleship')
 
 # Load the dictionary from Google Sheets
-sheet = client.open('Battleship').auth
-auth_dict = {row[0]: row[1] for row in sheet.get_all_values()}
+verify = SHEET.worksheet('auth_dict')
+auth_dict = {row[0]: row[1] for row in verify.get_all_values()}
 
 
 class Board:
