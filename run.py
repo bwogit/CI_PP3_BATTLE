@@ -27,7 +27,17 @@ def login(username, password):
     Authenticate with Google Sheets and get the auth_dict worksheet
     """
     auth_dict_worksheet = authenticate()
-
+    # Get all the rows in the worksheet as a list of dictionaries
+    rows = auth_dict_worksheet.get_all_records()
+    
+    # Check if there's a row with the given username and password
+    for row in rows:
+        if row['username'] == username and row['password'] == password:
+            # Return True if the username and password match
+            return True
+    
+    # Return False if the username and password don't match
+    return False
 
 
 class Board:
