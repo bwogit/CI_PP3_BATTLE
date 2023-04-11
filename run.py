@@ -90,7 +90,7 @@ def play_game():
     and player take turns unil no more ships
     """
     size = 5
-    player_name = input('Please enter your name: ')
+    player_name = input('Please enter your name:\n ')
     player_board = Board(size, player_name, 'player board')
     computer_board = Board(size, 'Computer', 'computer board')
 
