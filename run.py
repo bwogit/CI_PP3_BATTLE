@@ -170,4 +170,6 @@ def play_game():
             print('Computer misses...')
 
 
+authenticate()
+login(username,password)
 play_game()
