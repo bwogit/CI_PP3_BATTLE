@@ -32,15 +32,15 @@ def login(username, password):
     # Check for illegal or blank characters in the username and password
     illegal_chars = [' ', '\t', '\n', '#', '$',
                      '%', '&', '*', '+', '/',
-                     '<', '=', '>', '?', '@', '[', '\\', 
+                     '<', '=', '>', '?', '@', '[', '\\',
                      ']', '^', '`', '{', '|', '}', '~']
     for char in username:
         if char in illegal_chars:
-            print('Invalid! No spaces, tabs, or special characters allowed')
+            print('Invalid username! No spaces, tabs, or special characters')
             return False
     for char in password:
         if char in illegal_chars:
-            print('Invalid! No spaces, tabs, or special characters allowed')
+            print('Invalid password! No spaces, tabs, or special characters')
             return False
 
     auth_dict_worksheet = authenticate()
