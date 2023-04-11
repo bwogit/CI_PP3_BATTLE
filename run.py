@@ -32,13 +32,11 @@ def login(username, password):
     auth_dict_worksheet = authenticate()
     # Get all the rows in the worksheet as a list of dictionaries
     rows = auth_dict_worksheet.get_all_records()
-    
     # Check if there's a row with the given username and password
     for row in rows:
         if row['username'] == username and row['password'] == password:
             # Return True if the username and password match
             return True
-    
     # Return False if the username and password don't match
     return False
 
@@ -136,14 +134,12 @@ def play_game():
     # Ask for username and password
     username = input('Please enter your username: \n ')
     password = input('Please enter your password: \n')
-    
     # Authenticate user
     if login(username, password):
         print('Login successful! Starting the game...')
     else:
         print('Invalid credentials. Try again later.')
         return
-    
     player_name = username
     player_board = Board(size, player_name, 'player board')
     computer_board = Board(size, 'Computer', 'computer board')
