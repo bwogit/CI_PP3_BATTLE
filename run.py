@@ -197,13 +197,17 @@ def play_game():
             else:
                 print('Invalid credentials. Try again later.')
         elif choice == "2":
-            # Ask for username and password
             username = input('Enter a new username: \n ')
+            if not username:
+                print('Username cannot be empty!')
+                continue
+
             password = input('Enter new password (at least 5 char): \n')
             # Check password length
             if len(password) < 5:
                 print('Invalid password! must be at least 5 characters.')
                 continue
+
             # Authenticate user
             auth_dict_worksheet = authenticate()
             rows = auth_dict_worksheet.get_all_records()
