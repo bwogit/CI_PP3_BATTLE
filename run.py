@@ -26,43 +26,18 @@ def authenticate():
     return auth_dict_worksheet
 
 
-# def has_special_char(s):
-#     """
-#     Returns True if the given string contains a special character
-#     """
-#     if not s:
-#         return False
-
-#     illegal_chars = set([' ', '\t', '\n', '#', '$',
-#                          '%', '&', '*', '+', '/',
-#                          '<', '=', '>', '?', '@', '[', '\\',
-#                          ']', '^', '`', '{', '|', '}', '~'])
-#     for char in s:
-#         if char in illegal_chars:
-#             return True
-
-#     return False
-
-
 def login(username, password):
     """
     Authenticate with Google Sheets and get the auth_dict worksheet
     """
-    # Check for illegal or blank characters in the username and password
-    # if has_special_char(username):
-    #     print('Invalid username! No spaces, tabs, or special characters')
-    #     return False
-    # if has_special_char(password):
-    #     print('Invalid password! No spaces, tabs, or special characters')
-    #     return False
     if not username.strip() or not password.strip():
         print('Invalid username or password! Cannot be empty')
         return False
-    if len(username.strip()) < 6:
-        print('Invalid username! Must be at least 6 characters long')
+    if len(username.strip()) < 5:
+        print('Invalid username! Must be at least 5 characters long')
         return False
-    if len(password.strip()) < 6:
-        print('Invalid password! Must be at least 6 characters long')
+    if len(password.strip()) < 5:
+        print('Invalid password! Must be at least 5 characters long')
         return False
 
     auth_dict_worksheet = authenticate()
@@ -196,7 +171,9 @@ def play_game():
             else:
                 print('Invalid credentials. Try again later.')
         elif choice == "2":
-            username = input('Enter a new username: \n ')
+            username = input('Enter a new username (at least 5 char) \n ')
+            if len(username) < 5:
+                print('Invalid username! must be at least 5 characters.')
             if not username:
                 print('Username cannot be empty!')
                 continue
