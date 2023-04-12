@@ -168,7 +168,7 @@ def play_game():
     print(Fore.RED + " ~~~~[_________]")
     print(Fore.RED + "      \\~~~~~~~/")
     print(Fore.RED + "        \\~~~/")
-    print(Fore.RED + "         \\_/")
+    print(Fore.RED + "         \\_/\n" + Fore.RESET)
     print('')
     print("Please select an option:")
     print("1. Sign In")
