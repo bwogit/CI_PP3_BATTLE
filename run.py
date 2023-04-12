@@ -2,7 +2,11 @@ import random
 import gspread
 from google.oauth2.service_account import Credentials
 
+def has_special_char(s):
 
+
+
+    
 def authenticate():
     """
     authentication function.
