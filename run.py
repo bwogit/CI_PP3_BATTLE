@@ -158,15 +158,36 @@ def play_game():
             # Ask for username and password
             username = input('Please enter your username: \n ')
             password = input('Please enter your password: \n')
-        # Authenticate user
-        if login(username, password):
-            print('Login successful! Starting the game...')
-            player_name = username
-            break
-    else:
-        print('Invalid credentials. Try again later.')
-        return
-    #player_name = username
+            # Authenticate user
+            if login(username, password):
+                print('Login successful! Starting the game...')
+                player_name = username
+                break
+            else:
+                print('Invalid credentials. Try again later.')
+        elif choice == "2":
+            # Ask for username and password
+            username = input('Enter a new username: \n ')
+            password = input('Enter a new password (must be at least 5 char): \n')
+            # Check password length
+            if len(password) < 5:
+                print('Invalid password! must be at least 5 characters.')
+                continue
+            # Authenticate user
+            auth_dict_worksheet = authenticate()
+            rows = auth_dict_worksheet.get_all_records()
+            for row in rows:
+                if row['username'] == username:
+                    print('Username already taken.Choose a different username')
+                    break
+            else:
+                auth_dict_worksheet.append_row([username, password])
+                print('Account created successfully! Starting the game...')
+                player_name = username
+                break
+        else:
+            print('Invalid choice. Please enter 1 or 2.')
+ 
     player_board = Board(size, player_name, 'player board')
     computer_board = Board(size, 'Computer', 'computer board')
 
