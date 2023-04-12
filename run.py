@@ -150,17 +150,23 @@ def play_game():
     print("Please select an option:")
     print("1. Sign In")
     print("2. Sign Up")
-    
-    # Ask for username and password
-    username = input('Please enter your username: \n ')
-    password = input('Please enter your password: \n')
-    # Authenticate user
-    if login(username, password):
-        print('Login successful! Starting the game...')
+
+    # Prompt user to select an option and handle user input
+    while True:
+        choice = input("Enter the corresponding number to select an option: ")
+        if choice == "1":
+            # Ask for username and password
+            username = input('Please enter your username: \n ')
+            password = input('Please enter your password: \n')
+        # Authenticate user
+        if login(username, password):
+            print('Login successful! Starting the game...')
+            player_name = username
+            break
     else:
         print('Invalid credentials. Try again later.')
         return
-    player_name = username
+    #player_name = username
     player_board = Board(size, player_name, 'player board')
     computer_board = Board(size, 'Computer', 'computer board')
 
