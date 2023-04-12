@@ -62,7 +62,10 @@ def login(username, password):
     if len(password) < 6:
         print('Invalid password! Must be at least 6 characters long')
         return False
-
+    if not username or not password:
+        print('Invalid username or password! Cannot be empty')
+        return False
+        
     auth_dict_worksheet = authenticate()
     # Get all the rows in the worksheet as a list of dictionaries
     rows = auth_dict_worksheet.get_all_records()
