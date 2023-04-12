@@ -1,6 +1,7 @@
 import random
 import gspread
 from google.oauth2.service_account import Credentials
+from colorama import Fore
 
 
 def authenticate():
@@ -161,6 +162,14 @@ def play_game():
 
     # Menu with 2 options: Sign In and Sign Up
     print("Welcome to Battleship!")
+    print('')
+    print(Fore.RED + "        ___|")
+    print(Fore.RED + "    _____|_____")
+    print(Fore.RED + " ~~~~[_________]")
+    print(Fore.RED + "      \\~~~~~~~/")
+    print(Fore.RED + "        \\~~~/")
+    print(Fore.RED + "         \\_/")
+    print('')
     print("Please select an option:")
     print("1. Sign In")
     print("2. Sign Up")
