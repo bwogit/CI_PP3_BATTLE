@@ -174,10 +174,9 @@ def play_game():
             username = input('Enter a new username (at least 5 char) \n ')
             if len(username) < 5:
                 print('Invalid username! must be at least 5 characters.')
-                
-            if not username:
+            elif not username:
                 print('Username cannot be empty!')
-                continue
+                break
 
             password = input('Enter new password (at least 5 char): \n')
             # Check password length
