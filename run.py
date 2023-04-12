@@ -176,7 +176,7 @@ def play_game():
         elif choice == "2":
             # Ask for username and password
             username = input('Enter a new username: \n ')
-            password = input('Enter a new password (must be at least 5 char): \n')
+            password = input('Enter new password (at least 5 char): \n')
             # Check password length
             if len(password) < 5:
                 print('Invalid password! must be at least 5 characters.')
@@ -195,7 +195,7 @@ def play_game():
                 break
         else:
             print('Invalid choice. Please enter 1 or 2.')
- 
+
     player_board = Board(size, player_name, 'player board')
     computer_board = Board(size, 'Computer', 'computer board')
 
