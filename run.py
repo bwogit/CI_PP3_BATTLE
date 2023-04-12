@@ -2,11 +2,7 @@ import random
 import gspread
 from google.oauth2.service_account import Credentials
 
-def has_special_char(s):
 
-
-
-    
 def authenticate():
     """
     authentication function.
@@ -29,23 +25,31 @@ def authenticate():
     return auth_dict_worksheet
 
 
+def has_special_char(s):
+    """
+    Returns True if the given string contains a special character
+    """
+    illegal_chars = [' ', '\t', '\n', '#', '$',
+                     '%', '&', '*', '+', '/',
+                     '<', '=', '>', '?', '@', '[', '\\',
+                     ']', '^', '`', '{', '|', '}', '~']
+    for char in s:
+        if char in illegal_chars:
+            return True
+    return False
+
+
 def login(username, password):
     """
     Authenticate with Google Sheets and get the auth_dict worksheet
     """
     # Check for illegal or blank characters in the username and password
-    illegal_chars = [' ', '\t', '\n', '#', '$',
-                     '%', '&', '*', '+', '/',
-                     '<', '=', '>', '?', '@', '[', '\\',
-                     ']', '^', '`', '{', '|', '}', '~']
-    for char in username:
-        if char in illegal_chars:
-            print('Invalid username! No spaces, tabs, or special characters')
-            return False
-    for char in password:
-        if char in illegal_chars:
-            print('Invalid password! No spaces, tabs, or special characters')
-            return False
+    if has_special_char(username):
+        print('Invalid username! No spaces, tabs, or special characters')
+        return False
+    if has_special_char(password):
+        print('Invalid password! No spaces, tabs, or special characters')
+        return False
 
     auth_dict_worksheet = authenticate()
     # Get all the rows in the worksheet as a list of dictionaries
