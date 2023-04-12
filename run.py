@@ -5,7 +5,7 @@ from google.oauth2.service_account import Credentials
 
 def authenticate():
     """
-    authentication function. 
+    authentication function.
     """
 
     # Set up Google Sheets credentials
@@ -145,6 +145,12 @@ def play_game():
     """
     size = 5
 
+    # Menu with 2 options: Sign In and Sign Up
+    print("Welcome to Battleship!")
+    print("Please select an option:")
+    print("1. Sign In")
+    print("2. Sign Up")
+    
     # Ask for username and password
     username = input('Please enter your username: \n ')
     password = input('Please enter your password: \n')
