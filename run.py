@@ -30,13 +30,18 @@ def has_special_char(s):
     """
     Returns True if the given string contains a special character
     """
-    illegal_chars = [' ', '\t', '\n', '#', '$',
-                     '%', '&', '*', '+', '/',
-                     '<', '=', '>', '?', '@', '[', '\\',
-                     ']', '^', '`', '{', '|', '}', '~', ' ',]
+    if not s:
+        return False
+
+    illegal_chars = set([' ', '\t', '\n', '#', '$',
+                         '%', '&', '*', '+', '/',
+                         '<', '=', '>', '?', '@', '[', '\\',
+                         ']', '^', '`', '{', '|', '}', '~'])
+
     for char in s:
         if char in illegal_chars:
             return True
+
     return False
 
 
