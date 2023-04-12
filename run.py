@@ -174,7 +174,7 @@ def play_game():
             username = input('Enter a new username (at least 5 char) \n ')
             if len(username) < 5:
                 print('Invalid username! must be at least 5 characters.')
-                break
+                
             if not username:
                 print('Username cannot be empty!')
                 continue
