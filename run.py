@@ -26,22 +26,22 @@ def authenticate():
     return auth_dict_worksheet
 
 
-def has_special_char(s):
-    """
-    Returns True if the given string contains a special character
-    """
-    if not s:
-        return False
+# def has_special_char(s):
+#     """
+#     Returns True if the given string contains a special character
+#     """
+#     if not s:
+#         return False
 
-    illegal_chars = set([' ', '\t', '\n', '#', '$',
-                         '%', '&', '*', '+', '/',
-                         '<', '=', '>', '?', '@', '[', '\\',
-                         ']', '^', '`', '{', '|', '}', '~'])
-    for char in s:
-        if char in illegal_chars:
-            return True
+#     illegal_chars = set([' ', '\t', '\n', '#', '$',
+#                          '%', '&', '*', '+', '/',
+#                          '<', '=', '>', '?', '@', '[', '\\',
+#                          ']', '^', '`', '{', '|', '}', '~'])
+#     for char in s:
+#         if char in illegal_chars:
+#             return True
 
-    return False
+#     return False
 
 
 def login(username, password):
@@ -49,12 +49,12 @@ def login(username, password):
     Authenticate with Google Sheets and get the auth_dict worksheet
     """
     # Check for illegal or blank characters in the username and password
-    if has_special_char(username):
-        print('Invalid username! No spaces, tabs, or special characters')
-        return False
-    if has_special_char(password):
-        print('Invalid password! No spaces, tabs, or special characters')
-        return False
+    # if has_special_char(username):
+    #     print('Invalid username! No spaces, tabs, or special characters')
+    #     return False
+    # if has_special_char(password):
+    #     print('Invalid password! No spaces, tabs, or special characters')
+    #     return False
     if not username.strip() or not password.strip():
         print('Invalid username or password! Cannot be empty')
         return False
@@ -206,35 +206,7 @@ def play_game():
             if len(password) < 5:
                 print('Invalid password! must be at least 5 characters.')
                 continue
-        # elif choice == '2':
-        #     print("Enter a new username and password to login.")
-        #     username = input("Username: ")
-        #     password = input("Password: ")
-
-        #     if has_special_char(username):
-        #         print("Invalid username. spaces, tabs, special char forbodden")
-        #         continue
-        #     if not username.strip():
-        #         print("Invalid username. Cannot be empty.")
-        #         continue
-        #     if len(username.strip()) < 6:
-        #         print("Invalid username. Must be at least 6 characters long.")
-        #         continue
-        #     if has_special_char(password):
-        #         print("Invalid password. spaces, tabs, special char forbidden")
-        #         continue
-        #     if not password.strip():
-        #         print("Invalid password. Cannot be empty.")
-        #         continue
-        #     if len(password.strip()) < 6:
-        #         print("Invalid password. Must be at least 6 characters long.")
-        #         continue
-
-        #     if login(username, password):
-        #         print(Fore.GREEN + "Login successful." + Fore.RESET)
-        #     else:
-        #         print(Fore.RED + "Invalid username or password." + Fore.RESET)
-        #     # Authenticate user
+            # Authenticate user
             auth_dict_worksheet = authenticate()
             rows = auth_dict_worksheet.get_all_records()
             for row in rows:
