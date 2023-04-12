@@ -50,20 +50,20 @@ def login(username, password):
     Authenticate with Google Sheets and get the auth_dict worksheet
     """
     # Check for illegal or blank characters in the username and password
-    if not username or not password:
+    if not username.strip() or not password.strip():
         print('Invalid username or password! Cannot be empty')
+        return False
+    if len(username.strip()) < 6:
+        print('Invalid username! Must be at least 6 characters long')
+        return False
+    if len(password.strip()) < 6:
+        print('Invalid password! Must be at least 6 characters long')
         return False
     if has_special_char(username):
         print('Invalid username! No spaces, tabs, or special characters')
         return False
     if has_special_char(password):
         print('Invalid password! No spaces, tabs, or special characters')
-        return False
-    if len(username) < 6:
-        print('Invalid username! Must be at least 6 characters long')
-        return False
-    if len(password) < 6:
-        print('Invalid password! Must be at least 6 characters long')
         return False
 
     auth_dict_worksheet = authenticate()
