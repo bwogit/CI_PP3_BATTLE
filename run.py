@@ -195,18 +195,45 @@ def play_game():
                 break
             else:
                 print('Invalid credentials. Try again later.')
-        elif choice == "2":
-            username = input('Enter a new username: \n ')
-            if not username:
-                print('Username cannot be empty!')
+        # elif choice == "2":
+        #     username = input('Enter a new username: \n ')
+        #     if not username:
+        #         print('Username cannot be empty!')
+        #         continue
+
+        #     password = input('Enter new password (at least 5 char): \n')
+        #     # Check password length
+        #     if len(password) < 5:
+        #         print('Invalid password! must be at least 5 characters.')
+        #         continue
+        elif choice == '2':
+            print("Enter your username and password to login.")
+            username = input("Username: ")
+            password = input("Password: ")
+
+            if has_special_char(username):
+                print("Invalid username. spaces, tabs, special char forbodden")
+                continue
+            if not username.strip():
+                print("Invalid username. Cannot be empty.")
+                continue
+            if len(username.strip()) < 6:
+                print("Invalid username. Must be at least 6 characters long.")
+                continue
+            if has_special_char(password):
+                print("Invalid password. spaces, tabs, special char forbidden")
+                continue
+            if not password.strip():
+                print("Invalid password. Cannot be empty.")
+                continue
+            if len(password.strip()) < 6:
+                print("Invalid password. Must be at least 6 characters long.")
                 continue
 
-            password = input('Enter new password (at least 5 char): \n')
-            # Check password length
-            if len(password) < 5:
-                print('Invalid password! must be at least 5 characters.')
-                continue
-
+            if login(username, password):
+                print(Fore.GREEN + "Login successful." + Fore.RESET)
+            else:
+                print(Fore.RED + "Invalid username or password." + Fore.RESET)
             # Authenticate user
             auth_dict_worksheet = authenticate()
             rows = auth_dict_worksheet.get_all_records()
