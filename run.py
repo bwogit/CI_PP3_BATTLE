@@ -8,7 +8,7 @@ def authenticate():
     authentication function.
     """
 
-    # Set up Google Sheets credentials
+    # Set up Google Sheets credentials.
     SCOPE = [
         "https://www.googleapis.com/auth/spreadsheets",
         "https://www.googleapis.com/auth/drive.file",
@@ -32,7 +32,7 @@ def has_special_char(s):
     illegal_chars = [' ', '\t', '\n', '#', '$',
                      '%', '&', '*', '+', '/',
                      '<', '=', '>', '?', '@', '[', '\\',
-                     ']', '^', '`', '{', '|', '}', '~']
+                     ']', '^', '`', '{', '|', '}', '~', ' ',]
     for char in s:
         if char in illegal_chars:
             return True
@@ -49,6 +49,12 @@ def login(username, password):
         return False
     if has_special_char(password):
         print('Invalid password! No spaces, tabs, or special characters')
+        return False
+    if len(username) < 6:
+        print('Invalid username! Must be at least 6 characters long')
+        return False
+    if len(password) < 6:
+        print('Invalid password! Must be at least 6 characters long')
         return False
 
     auth_dict_worksheet = authenticate()
