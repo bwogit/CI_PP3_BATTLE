@@ -93,9 +93,17 @@ The application provides the user with prompts and menus to select the game mode
 - The function will first validate that the username and password are not empty and have at least 5 characters. 
 
 - Then, it will authenticate with Google Sheets using the authenticate function, and retrieve the auth_dict worksheet. It will retrieve all rows in the worksheet as a list of dictionaries, and check if there's a row with the given username and password. 
+
 - If the username and password match, the function will return True, indicating that the user has successfully signed in. 
 - If the username and password don't match, the function will return False, indicating that the sign in failed.
 
 #### Sign up Option
 - The signup operation is used to create a new account on the system. In order to sign up, the user will need to provide a unique username and a password that meets certain requirements, such as being at least 5 characters long.
+- When the user selects option 2 he is required to enter a username with minimum 5 characters
+- if the user fails to meet the 5 charracter minimum they will get an error message (must be at least 5 characters)
+- if the user tries to enter a blank username a warning will indicate that a username cannot be blank
+- if the user meets all the criteria he is prompted to enter a password with at least 5 characters
+- if the password is < 5 characters or baknk he gets a warning ( invalid password must be at least 5 characters )
+
+
 
