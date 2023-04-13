@@ -47,3 +47,25 @@
 - Provide an engaging and enjoyable gameplay experience: 
 - Provide an interface to allow players to log in to the game.
 - Allow the player to play against AI
+
+## User Experience
+
+### Target Audience
+- Individuals who like board games, strategy games, or games that involve logic and decision-making
+- Individuals who are interested in coding.
+
+
+### User Stories
+
+#### First-time User 
+1.	As a new player, I want to be able to sign up so that I can play Battleship.
+2.	As a registered player, I want to be able to sign in so that I can start a new game.
+3.	As a player, I want to be able to rely on AI to mark my ships on the board so that I can start the game.
+4.	As a player, I want to be able to fire missiles at my opponent's board so that I can win the game.
+5.	As a player, I want to be able to see the result of each turn so that I can keep track of the game.
+
+#### Site Owner
+1.	As the game owner, I want to implement a feature that prevents players from entering invalid usernames or passwords to prevent unauthorized access.
+2.	As the game owner, I want to implement a feature that prevents players from entering board sizes that are too small or too large to ensure that the game is fair and playable.
+3.	As the game owner, I want to implement a feature that prevents players from placing ships on top of each other to ensure that the game is fair and playable.
+5.	As the game owner, I want to implement a feature that allows players to play against a computer AI so that they can practice and improve their skills.
