@@ -113,3 +113,39 @@ The application provides the user with prompts and menus to select the game mode
     - 7x7 
 
 
+## Technical Design
+
+### Data models
+- The data model used in the code consists of two classes, Board and Player.
+
+- The Board class is responsible for initializing the game board, placing ships on the board, firing shots at the opponent's board, and displaying the game board to the user. The Board class has the following attributes:
+    - size
+    - grid
+    - ships
+    - computer_ships
+    - player_name
+    - board_type
+
+- The Board class has the following methods:
+
+    - __init__(self, size, player_name, board_type): initializes the Board object.
+    - __str__(self): returns a string representation of the board, which is printed when the board needs to be displayed.
+    - mark_ship(self, x, y): adds a ship at a given position on the board.
+    place_computer_ships(self): randomly places ships on the computer's board.
+    - has_ship(self, x, y): returns True if there is a ship at a given position on the board.
+    - is_valid(self, x, y): returns True if the given position is valid on the board.
+    - fire(self, x, y): returns True if there is a ship at a given position on the board, otherwise False.
+    - get_grid_coords(self, x, y): converts coordinates from the shot_grid to the grid.
+
+- The Player class is responsible for the game logic and interaction with the user. The Player class has the following attributes:
+
+    - board: a Board object representing the user's board.
+    - shot_grid: a 2D list representing the user's shots on the computer's board.
+
+- The Player class has the following methods:
+
+    - __init__(self, size, player_name): initializes the Player object.
+    - setup_board(self): prompts the user to mark their ships on the board.
+    - play(self, computer_board): allows the user to play against the computer.
+
+- Google sheets API.  JUSTIFICATION: I have chosen to use Google Sheets API so that the required data for the app will persist outside of the container.
