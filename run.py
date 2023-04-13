@@ -66,7 +66,6 @@ class Board:
         self.ships = []
         self.player_name = player_name
         self.board_type = board_type
-        #self.shot_grid = [['.' for _ in range(size)] for _ in range(size)]
 
     def __str__(self):
         """
@@ -106,38 +105,6 @@ class Board:
         if ship present at location displays 'X'.
         Otherwise, it sets the tile to '-'.
         """
-        # if (x, y) in self.ships:
-        #     self.ships.remove((x, y))
-        #     if self.board_type == "Computer":
-        #         self.grid[x][y] = Fore.RED + 'X' + Fore.RESET
-        #     else:
-        #         self.grid[x][y] = Fore.YELLOW + 'X' + Fore.RESET
-        #     return True
-        # else:
-        #     self.shot_grid[x][y] = Fore.YELLOW + '-' + Fore.RESET
-        #     return False
-
-        # Convert the coordinates from shot_grid to grid
-        #x_grid, y_grid = self.get_grid_coords(x, y)
-
-        # if (x_grid, y_grid) in self.ships:
-        #     self.ships.remove((x_grid, y_grid))
-        #     if self.board_type == "Computer":
-        #         self.grid[x_grid][y_grid] = Fore.RED + 'X' + Fore.RESET
-        #     else:
-        #         self.grid[x_grid][y_grid] = Fore.YELLOW + 'X' + Fore.RESET
-        #     self.shot_grid[x][y] = self.grid[x][y]
-        #     return True
-        # elif self.shot_grid[x][y] != '.':
-        #     print('You have already fired upon this location')
-        #     return False
-        # else:
-        #     self.shot_grid[x][y] = Fore.YELLOW + '-' + Fore.RESET
-        #     if self.board_type == "Computer":
-        #         self.grid[x_grid][y_grid] = Fore.GREEN + 'O' + Fore.RESET
-        #     else:
-        #         self.grid[x_grid][y_grid] = Fore.YELLOW + '-' + Fore.RESET
-        #     return False
         if (x, y) in self.ships:
             self.ships.remove((x, y))
             if self.board_type == "Computer":
@@ -154,36 +121,6 @@ class Board:
         Convert coordinates from shot_grid to grid
         """
         return y, x
-
-        # if (x, y) in self.ships:
-        #     self.ships.remove((x, y))
-        #     if self.board_type == "Computer":
-        #         self.grid[x][y] = Fore.RED + 'X' + Fore.RESET
-        #     else:
-        #         self.grid[x][y] = Fore.YELLOW + 'X' + Fore.RESET
-        #     self.shot_grid[x][y] = self.grid[x][y]
-        #     return True
-        # elif self.shot_grid[x][y] != '.':
-        #     print('You have already fired upon this location')
-        #     return False
-        # else:
-        #     self.shot_grid[x][y] = Fore.YELLOW + '-' + Fore.RESET
-        #     if self.board_type == "Computer":
-        #         self.grid[x][y] = Fore.GREEN + 'O' + Fore.RESET
-        #     else:
-        #         self.grid[x][y] = Fore.YELLOW + '-' + Fore.RESET
-        #     return False
-
-    # def display_shot_grid(self):
-    #     """
-    #     returns a string representation of the player's shot grid,
-    #     which is printed when the player wants to see where they've shot
-    #     """
-    #     s = f'{self.player_name} shot grid\n'
-    #     s += '   ' + ' '.join(str(i) for i in range(self.size)) + '\n'
-    #     for i in range(self.size):
-    #         s += f'{i} |{"|".join(self.shot_grid[i])}|\n'
-    #     return s
 
 
 def get_valid_coordinate(prompt, board):
@@ -269,8 +206,8 @@ def play_game():
                 break
         else:
             print('Invalid choice. Please enter 1 or 2.')
-    
-    # Prompt user to select the board size and handle user input
+        # Prompt user to select the board size and handle user input
+
     while True:
         size_choice = input("Select a board size (enter 1 for 5x5, 2 for 6x6, \
                             or 3 for 7x7): ")
@@ -305,26 +242,6 @@ def play_game():
                 break
         computer_board.mark_ship(x, y)
 
-    # play the game
-    # while player_board.ships and computer_board.ships:
-    #     print(player_board)
-    #     x, y = get_valid_coordinate(f'{player_name}, \
-    #         enter coordinates: ', computer_board)
-    #     player_hit = computer_board.fire(x, y)
-    #     if player_hit:
-    #         print('Hit!')
-    #     else:
-    #         print('Miss...')
-    #     x, y = random.randint(0, size-1), random.randint(0, size-1)
-    #     while not player_board.is_valid(x, y):
-    #         x, y = random.randint(0, size-1), random.randint(0, size-1)
-    #     computer_hit = player_board.fire(x, y)
-    #     print(f'Computer shoots at ({x},{y})')
-    #     if computer_hit:
-    #         print('Computer hits!')
-    #     else:
-    #         print('Computer misses...')
-    # Start the game loop
     player_turn = True
     while player_board.ships and computer_board.ships:
         if player_turn:
@@ -339,7 +256,6 @@ def play_game():
         else:
             x, y = random.randint(0, size-1), random.randint(0, size-1)
             hit = player_board.fire(x, y)
-            #print('\n' + player_board.display_shot_grid())
             if hit:
                 print(f"Your ship was hit at ({x},{y}).")
             else:
