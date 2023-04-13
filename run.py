@@ -87,6 +87,19 @@ class Board:
         self.ships.append((x, y))
         self.grid[x][y] = 'O'
 
+    def place_computer_ships(self):
+        """
+        Randomly places ships on the computer's grid.
+        """
+        for i in range(3):
+            while True:
+                x = random.randint(0, self.size - 1)
+                y = random.randint(0, self.size - 1)
+                if self.is_valid(x, y):
+                    self.computer_ships.append((x, y))
+                    self.grid[x][y] = 'O'
+                    break
+
     def has_ship(self, x, y):
         """
         returns true if has a ship on it
@@ -246,6 +259,10 @@ def play_game():
                 break
         computer_board.mark_ship(x, y)
         computer_board.computer_ships.append((x, y))
+
+    # Place ships on computer's board
+    print("Placing ships on computer's board...")
+    computer_board.place_computer_ships()
 
     player_turn = True
     while player_board.ships and computer_board.ships:
