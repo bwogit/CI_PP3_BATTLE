@@ -135,13 +135,17 @@ def get_valid_coordinate(prompt, board):
         try:
             x, y = input(prompt).split(',')
             x, y = int(x), int(y)
-            if not board.is_valid(x, y):
-                print('Invalid coordinates.')
+            if x < 0 or x > 4 or y < 0 or y > 4:
+                print("Invalid coordinates. Please enter integers" 
+                      "between 0 and 4.")
+            elif not board.is_valid(x, y):
+                print("That coordinate is already taken."
+                      " Please enter a different coordinate.")
             else:
                 return x, y
         except ValueError:
             print("Invalid input. Please enter two integers"
-                  "between 0-5 separated by a comma.")
+                  "between 0-4 separated by a comma.")
 
 
 def play_game():
