@@ -154,8 +154,6 @@ def get_valid_coordinate(prompt, board):
             elif not board.is_valid(x, y):
                 print("That coordinate is already taken."
                       " Please enter a different coordinate.")
-            elif board.has_ship(x, y):
-                print("You hit a ship!")
                 return x, y         
             else:
                 return x, y
