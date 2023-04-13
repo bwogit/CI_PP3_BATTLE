@@ -149,3 +149,18 @@ The application provides the user with prompts and menus to select the game mode
     - play(self, computer_board): allows the user to play against the computer.
 
 - Google sheets API.  JUSTIFICATION: I have chosen to use Google Sheets API so that the required data for the app will persist outside of the container.
+
+
+## Technologies Used
+
+### Languages
+
+- [Python 3](https://www.python.org/)
+
+### Frameworks and Tools
+
+1. [Git](https://git-scm.com/) - Git was used for version control within VSCode to push the code to GitHub.
+2. [GitHub](https://github.com/) - GitHub was used as a remote repository to store project code. 
+5. [Google Sheets](https://www.google.co.uk/sheets/about/) - was used to store data outside of the program.  The vehicle catalogue and appraisal data stored in 2 separate sheets.
+6. [Google Cloud Platform](https://cloud.google.com/cloud-console/) - was used to manage access and permissions to the google services, google auth, sheets etc.
+7. [Heroku](https://www.heroku.com/about) - Was used to deploy, manage, and scale this apps.
