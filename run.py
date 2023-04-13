@@ -216,7 +216,6 @@ def play_game():
     player_board = Board(size, player_name, 'player board')
     computer_board = Board(size, 'Computer', 'computer board')
 
-
     # add player's ships
     for i in range(5):
         while True:
@@ -234,25 +233,51 @@ def play_game():
         computer_board.mark_ship(x, y)
 
     # play the game
+    # while player_board.ships and computer_board.ships:
+    #     print(player_board)
+    #     x, y = get_valid_coordinate(f'{player_name}, \
+    #         enter coordinates: ', computer_board)
+    #     player_hit = computer_board.fire(x, y)
+    #     if player_hit:
+    #         print('Hit!')
+    #     else:
+    #         print('Miss...')
+    #     x, y = random.randint(0, size-1), random.randint(0, size-1)
+    #     while not player_board.is_valid(x, y):
+    #         x, y = random.randint(0, size-1), random.randint(0, size-1)
+    #     computer_hit = player_board.fire(x, y)
+    #     print(f'Computer shoots at ({x},{y})')
+    #     if computer_hit:
+    #         print('Computer hits!')
+    #     else:
+    #         print('Computer misses...')
+    # Start the game loop
+    player_turn = True
     while player_board.ships and computer_board.ships:
-        print(player_board)
-        x, y = get_valid_coordinate(f'{player_name}, \
-            enter coordinates: ', computer_board)
-        player_hit = computer_board.fire(x, y)
-        if player_hit:
-            print('Hit!')
+        if player_turn:
+            print(player_board)
+            x, y = get_valid_coordinate("Enter your shot (row,col): ", computer_board)
+            hit = computer_board.fire(x, y)
+            if hit:
+                print("You hit a ship!")
+            else:
+                print("You missed.")
         else:
-            print('Miss...')
-        x, y = random.randint(0, size-1), random.randint(0, size-1)
-        while not player_board.is_valid(x, y):
             x, y = random.randint(0, size-1), random.randint(0, size-1)
-        computer_hit = player_board.fire(x, y)
-        print(f'Computer shoots at ({x},{y})')
-        if computer_hit:
-            print('Computer hits!')
-        else:
-            print('Computer misses...')
+            hit = player_board.fire(x, y)
+            if hit:
+                print("The computer hit your ship at ({},{}).".format(x, y))
+            else:
+                print("The computer missed at ({},{}).".format(x, y))
 
+        player_turn = not player_turn
+
+    if not computer_board.ships:
+        print("Congratulations! You won!")
+    else:
+        print("Sorry, you lost. Better luck next time!")
+    print("Game over.")
+    
 
 authenticate()
 play_game()
