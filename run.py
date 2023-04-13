@@ -122,6 +122,7 @@ class Board:
                 self.grid[x][y] = Fore.RED + 'X' + Fore.RESET
             else:
                 self.grid[x][y] = Fore.YELLOW + 'X' + Fore.RESET
+            self.shot_grid[x][y] = self.grid[x][y]
             return True
         elif self.shot_grid[x][y] != '.':
             print('You have already fired upon this location')
