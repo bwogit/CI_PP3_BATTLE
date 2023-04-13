@@ -66,7 +66,8 @@ class Board:
         self.ships = []
         self.player_name = player_name
         self.board_type = board_type
-
+        self.shot_grid = [['.' for _ in range(size)] for _ in range(size)]
+        
     def __str__(self):
         """
         returns a string representation of the board,
@@ -115,6 +116,17 @@ class Board:
         else:
             self.grid[x][y] = '-'
             return False
+    
+    def display_shot_grid(self):
+        """
+        returns a string representation of the player's shot grid,
+        which is printed when the player wants to see where they've shot
+        """
+        s = f'{self.player_name} shot grid\n'
+        s += '   ' + ' '.join(str(i) for i in range(self.size)) + '\n'
+        for i in range(self.size):
+            s += f'{i} |{"|".join(self.shot_grid[i])}|\n'
+        return s
 
 
 def get_valid_coordinate(prompt, board):
@@ -203,7 +215,8 @@ def play_game():
     
     # Prompt user to select the board size and handle user input
     while True:
-        size_choice = input("Select a board size (enter 1 for 5x5, 2 for 6x6, or 3 for 7x7): ")
+        size_choice = input("Select a board size (enter 1 for 5x5, 2 for 6x6, \
+                            or 3 for 7x7): ")
         if size_choice == '1':
             size = 5
             break
@@ -269,6 +282,7 @@ def play_game():
         else:
             x, y = random.randint(0, size-1), random.randint(0, size-1)
             hit = player_board.fire(x, y)
+            print('\n' + player_board.display_shot_grid())
             if hit:
                 print(f"Your ship was hit at ({x},{y}).")
             else:
