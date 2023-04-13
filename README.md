@@ -77,3 +77,25 @@
 - This application is a command-line implementation of the popular game "Battleship". It allows two players, a human and a computer, to play against each other. The game is played on two separate 5x5 grids, one for each player. The grids are initially empty and players take turns firing missiles at each other's grids in an attempt to sink each other's ships.
 
 The application provides the user with prompts and menus to select the game mode, enter their username and password to login, place their ships on their grid, and fire missiles at their opponent's grid. The user can see their own grid and the shots they have made on their opponent's grid. The application also validates input and checks for errors before proceeding to the next step. The game ends when one of the players has sunk all of the ships of their opponent.
+
+#### Main Menu
+
+- On the main menu you will be provided with 2 options
+
+1. Sign In : this option is for already registered users. Upon validation of their credentilas (username and password ) a user gains access to the application.
+
+2. Sign up : This option allows a user who has never played this game to create a username and a password. 
+
+#### Sign In Option
+
+- If a user selects the option 1 "Sign in" in the battlefield game, the login function will be called. The user will be prompted to enter their username and password. 
+
+- The function will first validate that the username and password are not empty and have at least 5 characters. 
+
+- Then, it will authenticate with Google Sheets using the authenticate function, and retrieve the auth_dict worksheet. It will retrieve all rows in the worksheet as a list of dictionaries, and check if there's a row with the given username and password. 
+- If the username and password match, the function will return True, indicating that the user has successfully signed in. 
+- If the username and password don't match, the function will return False, indicating that the sign in failed.
+
+#### Sign up Option
+- The signup operation is used to create a new account on the system. In order to sign up, the user will need to provide a unique username and a password that meets certain requirements, such as being at least 5 characters long.
+
