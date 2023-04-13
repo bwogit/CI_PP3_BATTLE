@@ -139,8 +139,8 @@ def get_valid_coordinate(prompt, board):
             else:
                 return x, y
         except ValueError:
-            print('Invalid input. Please enter two integers \
-               between 0-5 separated by a comma.')
+            print("Invalid input. Please enter two integers"
+                  "between 0-5 separated by a comma.")
 
 
 def play_game():
@@ -177,14 +177,13 @@ def play_game():
                 print('Login successful! Starting the game...')
                 player_name = username
                 break
-            else:
-                print('Invalid credentials. Try again later.')
+            print('Invalid credentials. Try again later.')
         elif choice == "2":
             username = input('Enter a new username (at least 5 char) \n ')
             if not username:
                 print('Username cannot be empty!')
                 continue
-            elif len(username) < 5:
+            if len(username) < 5:
                 print('Invalid username! must be at least 5 characters.')
                 continue
             password = input('Enter new password (at least 5 char): \n')
@@ -209,8 +208,8 @@ def play_game():
         # Prompt user to select the board size and handle user input
 
     while True:
-        size_choice = input("Select a board size (enter 1 for 5x5, 2 for 6x6, \
-                            or 3 for 7x7): ")
+        size_choice = input("Select a board size (enter 1 for 5x5, 2 for 6x6, "
+                            "or 3 for 7x7): ")
         if size_choice == '1':
             size = 5
             break
