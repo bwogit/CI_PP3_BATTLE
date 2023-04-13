@@ -66,7 +66,7 @@ class Board:
         self.ships = []
         self.player_name = player_name
         self.board_type = board_type
-        self.shot_grid = [['.' for _ in range(size)] for _ in range(size)]
+        #self.shot_grid = [['.' for _ in range(size)] for _ in range(size)]
 
     def __str__(self):
         """
