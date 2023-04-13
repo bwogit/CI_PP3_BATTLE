@@ -36,4 +36,14 @@
 - Implement an authentication system using Google Sheets API to allow players to log in. 
 - Create a Board class to represent the game board.
 - Implement a function to randomly place ships on the computer's grid.
-- Create methods to mark the ships on the board, check if a location has a     ship, and to fire a shot at a location.
+- Create methods to mark the ships on the board, check if a location has a ship, and to fire a shot at a location.
+
+### User Goals
+- Authenticate the user with the correct username and password, preventing unauthorized access.
+- Play the game of Battleship with a player and a computer, place and track the location of       ships, and mark successful hits and misses on the board.
+- Provide user feedback and error messages for invalid inputs or actions, helping the user to understand how to interact with the program correctly.
+
+### User Goals
+- Provide an engaging and enjoyable gameplay experience: 
+- Provide an interface to allow players to log in to the game.
+- Allow the player to play against AI
