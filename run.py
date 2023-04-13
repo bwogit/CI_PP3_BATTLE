@@ -118,7 +118,7 @@ class Board:
         #     return False
 
         # Convert the coordinates from shot_grid to grid
-        x_grid, y_grid = self.get_grid_coords(x, y)
+        #x_grid, y_grid = self.get_grid_coords(x, y)
 
         # if (x_grid, y_grid) in self.ships:
         #     self.ships.remove((x_grid, y_grid))
