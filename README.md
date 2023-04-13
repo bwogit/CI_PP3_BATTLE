@@ -69,3 +69,11 @@
 2.	As the game owner, I want to implement a feature that prevents players from entering board sizes that are too small or too large to ensure that the game is fair and playable.
 3.	As the game owner, I want to implement a feature that prevents players from placing ships on top of each other to ensure that the game is fair and playable.
 5.	As the game owner, I want to implement a feature that allows players to play against a computer AI so that they can practice and improve their skills.
+
+### User Manual
+
+#### Overview
+
+- This application is a command-line implementation of the popular game "Battleship". It allows two players, a human and a computer, to play against each other. The game is played on two separate 5x5 grids, one for each player. The grids are initially empty and players take turns firing missiles at each other's grids in an attempt to sink each other's ships.
+
+The application provides the user with prompts and menus to select the game mode, enter their username and password to login, place their ships on their grid, and fire missiles at their opponent's grid. The user can see their own grid and the shots they have made on their opponent's grid. The application also validates input and checks for errors before proceeding to the next step. The game ends when one of the players has sunk all of the ships of their opponent.
