@@ -129,9 +129,9 @@ class Board:
         else:
             self.grid[x][y] = Fore.YELLOW + '-' + Fore.RESET
             return False
-        # if self.grid[x][y] == Fore.YELLOW + '-' + Fore.RESET:
-        #     print("That coordinate is already taken.")
-        #     return False
+        if self.grid[x][y] == Fore.YELLOW + '-' + Fore.RESET:
+            print("That coordinate is already taken.")
+            return False
         # elif (x, y) in self.ships:
         #     self.ships.remove((x, y))
         #     if self.board_type == "Computer":
