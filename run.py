@@ -174,16 +174,16 @@ class Board:
         #         self.grid[x][y] = Fore.YELLOW + '-' + Fore.RESET
         #     return False
 
-    def display_shot_grid(self):
-        """
-        returns a string representation of the player's shot grid,
-        which is printed when the player wants to see where they've shot
-        """
-        s = f'{self.player_name} shot grid\n'
-        s += '   ' + ' '.join(str(i) for i in range(self.size)) + '\n'
-        for i in range(self.size):
-            s += f'{i} |{"|".join(self.shot_grid[i])}|\n'
-        return s
+    # def display_shot_grid(self):
+    #     """
+    #     returns a string representation of the player's shot grid,
+    #     which is printed when the player wants to see where they've shot
+    #     """
+    #     s = f'{self.player_name} shot grid\n'
+    #     s += '   ' + ' '.join(str(i) for i in range(self.size)) + '\n'
+    #     for i in range(self.size):
+    #         s += f'{i} |{"|".join(self.shot_grid[i])}|\n'
+    #     return s
 
 
 def get_valid_coordinate(prompt, board):
@@ -339,7 +339,7 @@ def play_game():
         else:
             x, y = random.randint(0, size-1), random.randint(0, size-1)
             hit = player_board.fire(x, y)
-            print('\n' + player_board.display_shot_grid())
+            #print('\n' + player_board.display_shot_grid())
             if hit:
                 print(f"Your ship was hit at ({x},{y}).")
             else:
