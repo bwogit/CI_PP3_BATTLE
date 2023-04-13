@@ -168,9 +168,9 @@ The application provides the user with prompts and menus to select the game mode
 6. [Google Cloud Platform](https://cloud.google.com/cloud-console/) - was used to manage access and permissions to the google services, google auth, sheets etc.
 7. [Heroku](https://www.heroku.com/about) - Was used to deploy, manage, and scale this apps.
 
-### Features
+## Features
 
-## Main menu
+### Main menu
 
 Visualy pleasant welcome screen, Interactive Menu Prompt the user to either signup or sign in 
 user story covered 1,2,7
@@ -178,7 +178,21 @@ user story covered 1,2,7
 <img src="docs/features/main_menu.jpg">
 </details>
 
-## Sign Up
-function to validate the user's login credentials using the "auth_dict" worksheet. 
+### Sign Up
+Function to create new user's login credentials and saving them on the "auth_dict" worksheet. 
 User stories covered 1,7
+<details><summary>Sign Up</summary>
+<img src="docs/features/main_menu.jpg">
+</details>
+
+### Sign In
+Function to validate the user's login credentials using the "auth_dict" worksheet. 
+User stories covered 2,7
+<details><summary>Sign Up</summary>
+<img src="docs/features/main_menu.jpg">
+</details>
+
+### Input Validation
+Provides Feed back to the user : After user is logged in successfully, a welcome message is displayed
+User story covered 7
 
