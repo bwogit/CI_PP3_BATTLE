@@ -105,5 +105,11 @@ The application provides the user with prompts and menus to select the game mode
 - if the user meets all the criteria he is prompted to enter a password with at least 5 characters
 - if the password is < 5 characters or baknk he gets a warning ( invalid password must be at least 5 characters )
 
+### Game Page
+
+- Upon sucessfull sign in the user is prompted to select 3 board sizes
+    - 5x5
+    - 6x6
+    - 7x7 
 
 
