@@ -63,12 +63,15 @@
 3.	As a player, I want to be able to rely on AI to mark my ships on the board so that I can start the game.
 4.	As a player, I want to be able to fire missiles at my opponent's board so that I can win the game.
 5.	As a player, I want to be able to see the result of each turn so that I can keep track of the game.
+6.	As a player, I want to be able to choose the size of the board so that I can customize the game.
 
 #### Site Owner
-1.	As the game owner, I want to implement a feature that prevents players from entering invalid usernames or passwords to prevent unauthorized access.
-2.	As the game owner, I want to implement a feature that prevents players from entering board sizes that are too small or too large to ensure that the game is fair and playable.
-3.	As the game owner, I want to implement a feature that prevents players from placing ships on top of each other to ensure that the game is fair and playable.
-5.	As the game owner, I want to implement a feature that allows players to play against a computer AI so that they can practice and improve their skills.
+7.	As the game owner, I want to implement a feature that prevents players from entering invalid usernames or passwords to prevent unauthorized access.
+8.	As the game owner, I want to implement a feature that prevents players from entering board sizes that are too small or too large to ensure that the game is fair and playable.
+9.	As the game owner, I want the application to be user friendly.
+10.	As the game owner, I want to implement a feature that allows players to play against a computer AI so that they can practice and improve their skills.
+11.	As the game owner, I want to implement a feature that keeps track of the game's progress and displays the winner once the game is over so that players can see who won.
+12. As a site owner I want the game to be playable on multiple devuices.
 
 ### User Manual
 
@@ -164,3 +167,18 @@ The application provides the user with prompts and menus to select the game mode
 5. [Google Sheets](https://www.google.co.uk/sheets/about/) - was used to store data outside of the program.  The vehicle catalogue and appraisal data stored in 2 separate sheets.
 6. [Google Cloud Platform](https://cloud.google.com/cloud-console/) - was used to manage access and permissions to the google services, google auth, sheets etc.
 7. [Heroku](https://www.heroku.com/about) - Was used to deploy, manage, and scale this apps.
+
+### Features
+
+## Main menu
+
+Visualy pleasant welcome screen, Interactive Menu Prompt the user to either signup or sign in 
+user story covered 1,2,7
+<details><summary>Main Menu</summary>
+<img src="docs/features/main_menu.jpg">
+</details>
+
+## Sign Up
+function to validate the user's login credentials using the "auth_dict" worksheet. 
+User stories covered 1,7
+

@@ -28,7 +28,8 @@ def authenticate():
 
 def login(username, password):
     """
-    Authenticate with Google Sheets and get the auth_dict worksheet
+    Authenticate with Google Sheets and get the auth_dict worksheet. 
+    Input Validation. 
     """
     if not username.strip() or not password.strip():
         print('Invalid username or password! Cannot be empty')
@@ -132,18 +133,6 @@ class Board:
         if self.grid[x][y] == Fore.YELLOW + '-' + Fore.RESET:
             print("That coordinate is already taken.")
             return False
-        # elif (x, y) in self.ships:
-        #     self.ships.remove((x, y))
-        #     if self.board_type == "Computer":
-        #         self.grid[x][y] = Fore.RED + 'X' + Fore.RESET
-        #     else:
-        #         self.grid[x][y] = Fore.YELLOW + 'X' + Fore.RESET
-        #     print("You hit a ship!")
-        #     return True
-        # else:
-        #     self.grid[x][y] = Fore.YELLOW + '-' + Fore.RESET
-        #     print("You missed!")
-        #     return False
 
     def get_grid_coords(self, x, y):
         """
