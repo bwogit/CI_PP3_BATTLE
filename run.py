@@ -64,6 +64,7 @@ class Board:
         self.size = size
         self.grid = [['.' for _ in range(size)] for _ in range(size)]
         self.ships = []
+        self.computer_ships = []
         self.player_name = player_name
         self.board_type = board_type
 
@@ -240,6 +241,7 @@ def play_game():
             if computer_board.is_valid(x, y):
                 break
         computer_board.mark_ship(x, y)
+        computer_board.computer_ships.append((x, y))
 
     player_turn = True
     while player_board.ships and computer_board.ships:
