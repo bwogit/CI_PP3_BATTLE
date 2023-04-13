@@ -120,23 +120,33 @@ class Board:
         # Convert the coordinates from shot_grid to grid
         x_grid, y_grid = self.get_grid_coords(x, y)
 
-        if (x_grid, y_grid) in self.ships:
-            self.ships.remove((x_grid, y_grid))
+        # if (x_grid, y_grid) in self.ships:
+        #     self.ships.remove((x_grid, y_grid))
+        #     if self.board_type == "Computer":
+        #         self.grid[x_grid][y_grid] = Fore.RED + 'X' + Fore.RESET
+        #     else:
+        #         self.grid[x_grid][y_grid] = Fore.YELLOW + 'X' + Fore.RESET
+        #     self.shot_grid[x][y] = self.grid[x][y]
+        #     return True
+        # elif self.shot_grid[x][y] != '.':
+        #     print('You have already fired upon this location')
+        #     return False
+        # else:
+        #     self.shot_grid[x][y] = Fore.YELLOW + '-' + Fore.RESET
+        #     if self.board_type == "Computer":
+        #         self.grid[x_grid][y_grid] = Fore.GREEN + 'O' + Fore.RESET
+        #     else:
+        #         self.grid[x_grid][y_grid] = Fore.YELLOW + '-' + Fore.RESET
+        #     return False
+        if (x, y) in self.ships:
+            self.ships.remove((x, y))
             if self.board_type == "Computer":
-                self.grid[x_grid][y_grid] = Fore.RED + 'X' + Fore.RESET
+                self.grid[x][y] = Fore.RED + 'X' + Fore.RESET
             else:
-                self.grid[x_grid][y_grid] = Fore.YELLOW + 'X' + Fore.RESET
-            self.shot_grid[x][y] = self.grid[x][y]
+                self.grid[x][y] = Fore.YELLOW + 'X' + Fore.RESET
             return True
-        elif self.shot_grid[x][y] != '.':
-            print('You have already fired upon this location')
-            return False
         else:
-            self.shot_grid[x][y] = Fore.YELLOW + '-' + Fore.RESET
-            if self.board_type == "Computer":
-                self.grid[x_grid][y_grid] = Fore.GREEN + 'O' + Fore.RESET
-            else:
-                self.grid[x_grid][y_grid] = Fore.YELLOW + '-' + Fore.RESET
+            self.grid[x][y] = Fore.YELLOW + '-' + Fore.RESET
             return False
 
     def get_grid_coords(self, x, y):
