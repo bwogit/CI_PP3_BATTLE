@@ -197,9 +197,25 @@ def play_game():
                 break
         else:
             print('Invalid choice. Please enter 1 or 2.')
+    
+    # Prompt user to select the board size and handle user input
+    while True:
+        size_choice = input("Select a board size (enter 1 for 5x5, 2 for 6x6, or 3 for 7x7): ")
+        if size_choice == '1':
+            size = 5
+            break
+        elif size_choice == '2':
+            size = 6
+            break
+        elif size_choice == '3':
+            size = 7
+            break
+        else:
+            print("Invalid input. Please enter 1, 2, or 3.")
 
     player_board = Board(size, player_name, 'player board')
     computer_board = Board(size, 'Computer', 'computer board')
+
 
     # add player's ships
     for i in range(5):
