@@ -256,7 +256,8 @@ def play_game():
     while player_board.ships and computer_board.ships:
         if player_turn:
             print(player_board)
-            x, y = get_valid_coordinate("Enter your shot (row,col): ", computer_board)
+            x, y = get_valid_coordinate(f'{player_name},your shot (row,col):',
+                                        computer_board)
             hit = computer_board.fire(x, y)
             if hit:
                 print("You hit a ship!")
@@ -266,9 +267,9 @@ def play_game():
             x, y = random.randint(0, size-1), random.randint(0, size-1)
             hit = player_board.fire(x, y)
             if hit:
-                print("The computer hit your ship at ({},{}).".format(x, y))
+                print(f"Your ship was hit at ({x},{y}).")
             else:
-                print("The computer missed at ({},{}).".format(x, y))
+                print(f"The computer missed at ({x},{y}).")
 
         player_turn = not player_turn
 
@@ -277,7 +278,7 @@ def play_game():
     else:
         print("Sorry, you lost. Better luck next time!")
     print("Game over.")
-    
+
 
 authenticate()
 play_game()
