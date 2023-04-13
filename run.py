@@ -106,6 +106,16 @@ class Board:
         if ship present at location displays 'X'.
         Otherwise, it sets the tile to '-'.
         """
+        # if (x, y) in self.ships:
+        #     self.ships.remove((x, y))
+        #     if self.board_type == "Computer":
+        #         self.grid[x][y] = Fore.RED + 'X' + Fore.RESET
+        #     else:
+        #         self.grid[x][y] = Fore.YELLOW + 'X' + Fore.RESET
+        #     return True
+        # else:
+        #     self.shot_grid[x][y] = Fore.YELLOW + '-' + Fore.RESET
+        #     return False
         if (x, y) in self.ships:
             self.ships.remove((x, y))
             if self.board_type == "Computer":
@@ -113,8 +123,15 @@ class Board:
             else:
                 self.grid[x][y] = Fore.YELLOW + 'X' + Fore.RESET
             return True
+        elif self.shot_grid[x][y] != '.':
+            print('You have already fired upon this location')
+            return False
         else:
-            self.shot_grid[x][y] = Fore.CYAN + '-' + Fore.RESET
+            self.shot_grid[x][y] = Fore.YELLOW + '-' + Fore.RESET
+            if self.board_type == "Computer":
+                self.grid[x][y] = Fore.GREEN + 'O' + Fore.RESET
+            else:
+                self.grid[x][y] = Fore.YELLOW + '-' + Fore.RESET
             return False
 
     def display_shot_grid(self):
