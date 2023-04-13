@@ -119,15 +119,30 @@ class Board:
         if ship present at location displays 'X'.
         Otherwise, it sets the tile to '-'.
         """
-        if (x, y) in self.ships:
+        # if (x, y) in self.ships:
+        #     self.ships.remove((x, y))
+        #     if self.board_type == "Computer":
+        #         self.grid[x][y] = Fore.RED + 'X' + Fore.RESET
+        #     else:
+        #         self.grid[x][y] = Fore.YELLOW + 'X' + Fore.RESET
+        #     return True
+        # else:
+        #     self.grid[x][y] = Fore.YELLOW + '-' + Fore.RESET
+        #     return False
+        if self.grid[x][y] == Fore.YELLOW + '-' + Fore.RESET:
+            print("That coordinate is already taken.")
+            return False
+        elif (x, y) in self.ships:
             self.ships.remove((x, y))
             if self.board_type == "Computer":
                 self.grid[x][y] = Fore.RED + 'X' + Fore.RESET
             else:
                 self.grid[x][y] = Fore.YELLOW + 'X' + Fore.RESET
+            print("You hit a ship!")
             return True
         else:
             self.grid[x][y] = Fore.YELLOW + '-' + Fore.RESET
+            print("You missed!")
             return False
 
     def get_grid_coords(self, x, y):
