@@ -107,7 +107,10 @@ class Board:
         """
         if (x, y) in self.ships:
             self.ships.remove((x, y))
-            self.grid[x][y] = 'X'
+            if self.board_type == "Computer":
+                self.grid[x][y] = Fore.RED + 'X' + Fore.RESET
+            else:
+                self.grid[x][y] = Fore.YELLOW + 'X' + Fore.RESET   
             return True
         else:
             self.grid[x][y] = '-'
