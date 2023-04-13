@@ -67,7 +67,7 @@ class Board:
         self.player_name = player_name
         self.board_type = board_type
         self.shot_grid = [['.' for _ in range(size)] for _ in range(size)]
-        
+
     def __str__(self):
         """
         returns a string representation of the board,
@@ -111,12 +111,12 @@ class Board:
             if self.board_type == "Computer":
                 self.grid[x][y] = Fore.RED + 'X' + Fore.RESET
             else:
-                self.grid[x][y] = Fore.YELLOW + 'X' + Fore.RESET   
+                self.grid[x][y] = Fore.YELLOW + 'X' + Fore.RESET
             return True
         else:
-            self.grid[x][y] = '-'
+            self.shot_grid[x][y] = Fore.CYAN + '-' + Fore.RESET
             return False
-    
+
     def display_shot_grid(self):
         """
         returns a string representation of the player's shot grid,
