@@ -60,18 +60,15 @@
 #### First-time User 
 1.	As a new player, I want to be able to sign up so that I can play Battleship.
 2.	As a registered player, I want to be able to sign in so that I can start a new game.
-3.	As a player, I want to be able to rely on AI to mark my ships on the board so that I can start the game.
-4.	As a player, I want to be able to fire missiles at my opponent's board so that I can win the game.
+3.	As a player, I want to be able to rely on AI to mark my ships on the board so that Improve my skills.
+4.	As a player, I want to be able to choose the coordinates so that I can win the game.
 5.	As a player, I want to be able to see the result of each turn so that I can keep track of the game.
 6.	As a player, I want to be able to choose the size of the board so that I can customize the game.
 
 #### Site Owner
 7.	As the game owner, I want to implement a feature that prevents players from entering invalid usernames or passwords to prevent unauthorized access.
-8.	As the game owner, I want to implement a feature that prevents players from entering board sizes that are too small or too large to ensure that the game is fair and playable.
-9.	As the game owner, I want the application to be user friendly.
-10.	As the game owner, I want to implement a feature that allows players to play against a computer AI so that they can practice and improve their skills.
-11.	As the game owner, I want to implement a feature that keeps track of the game's progress and displays the winner once the game is over so that players can see who won.
-12. As a site owner I want the game to be playable on multiple devuices.
+8.	As the game owner, I want the application to be user friendly.
+9. As a site owner I want the game to be playable on multiple devuices.
 
 ### User Manual
 
@@ -195,4 +192,39 @@ User stories covered 2,7
 ### Input Validation
 Provides Feed back to the user : After user is logged in successfully, a welcome message is displayed
 User story covered 7
+<details><summary>Input Validation</summary>
+<img src="docs/features/input_validation.jpg">
+</details>
+
+### Greetings
+Personalised Greeting: The login phase has been sucessuful. The player is welcomed gy his own name. the system provides feedBack for ease of use.
+User story covered 9
+<details><summary>Greetings</summary>
+<img src="docs/features/greetings1.jpg">
+</details>
+
+### Select Board Size
+In order to prevent the game from behing too large or too small the game has 3 different predefined sixes and input validation.
+User story covered 6,8
+<details><summary>Board Size.jpg</summary>
+<img src="docs/features/board_size.jpg">
+</details>
+
+### Playing against AI
+I want to improve my skills therefore I relay on the randomness of the ship placement to improve my skills
+<details><summary>AI_generated.jpg</summary>
+<img src="docs/features/board_size.jpg">
+</details>
+
+### choose my coordintes
+I want to be able to choose the coordinates of my oponent's ships location. I want the system to tell me when the coordinates that I have choses hav been slected before. I also want the system to tell me when my selection is out of bounds or the selection is illegal.
+<details><summary>AI_generated.jpg</summary>
+<img src="docs/features/board_size.jpg">
+</details>
+
+### Feedback
+At any stage of the game the player is provided with immediate feedback. The player can therefore keep track of score and generalyy what is happening in the game.
+<details><summary>AI_generated.jpg</summary>
+<img src="docs/features/board_size.jpg">
+</details>
 
