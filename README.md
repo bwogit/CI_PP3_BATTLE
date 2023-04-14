@@ -280,6 +280,7 @@ The code passes the python validator with no error.
 </details>
 
 2. As a registered player, I want to be able to sign in so that I can start a new game.
+
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
 | Main screen |      Select option 1       | User is prompted to enter a username and password | Works as expected |
@@ -289,6 +290,7 @@ The code passes the python validator with no error.
 </details>
 
 3.  As a player, I want to be able to rely on AI to mark my ships on the board so that Improve my skills.
+
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
 | Game Screen |Player is informed that the AI has placed the compute ships on the computer board      | ships placed | Works as expected |
@@ -298,6 +300,7 @@ The code passes the python validator with no error.
 </details>
 
 4.  As a player, I want to be able to choose the coordinates so that I can win the game.
+
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
 | Game Screen |Player is informed that the AI has placed the compute ships on the computer board| ships placed | Works as expected |
@@ -307,6 +310,7 @@ The code passes the python validator with no error.
 </details>
 
 5.  As a player, I want to be able to see the result of each turn so that I can keep track of the game.
+
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
 | Game Screen |Player makes his selection and validates| computer tells results| Works as expected |
@@ -317,6 +321,7 @@ The code passes the python validator with no error.
 
 
 6.  As a player, I want to be able to choose the size of the board so that I can customize the game.
+
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
 | Game Screen |Player is informed that the AI has placed the compute ships on the computer board      | ships placed | Works as expected |
@@ -326,6 +331,7 @@ The code passes the python validator with no error.
 </details>
 
 7.  As the game owner, I want to implement a feature that prevents players from entering invalid usernames or passwords to prevent unauthorized access.
+
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
 | Main screen |Player is prompted to input credentials| if username or password blank or doen't meet the lenght criteria (for signup) it will be rejected| Works as expected |
@@ -337,6 +343,7 @@ The code passes the python validator with no error.
 
 
 8.  As the game owner, I want the application to be user friendly.
+
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
 | Main Screen |there is clear choice 1 or 2 | Input validation so not to confuse the player | Works as expected |
@@ -349,6 +356,7 @@ The code passes the python validator with no error.
 </details>
 
 9. As a site owner I want the game to be playable on multiple devices.
+
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
 | Game ara |testing the game on multiple devices | games adapt to the resolution of the device | Works as expected |
