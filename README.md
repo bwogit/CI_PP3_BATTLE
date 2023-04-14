@@ -115,6 +115,15 @@ The application provides the user with prompts and menus to select the game mode
 
 ## Technical Design
 
+### Flowchart
+
+The following flowchart summarises the structure and logic of the application.
+
+<details><summary>Flowchart</summary>
+<img src="docs/flowchart/flowchart.jpg">
+</details>
+
+
 ### Data models
 - The data model used in the code consists of two classes, Board and Player.
 
@@ -164,6 +173,17 @@ The application provides the user with prompts and menus to select the game mode
 5. [Google Sheets](https://www.google.co.uk/sheets/about/) - was used to store data outside of the program.  The vehicle catalogue and appraisal data stored in 2 separate sheets.
 6. [Google Cloud Platform](https://cloud.google.com/cloud-console/) - was used to manage access and permissions to the google services, google auth, sheets etc.
 7. [Heroku](https://www.heroku.com/about) - Was used to deploy, manage, and scale this apps.
+8. [Diagrams.net](https://app.diagrams.net/) was used to draw program flowchart
+
+### Libraries
+
+#### Python Libraries
+- random - used to alternate first player to start the game
+
+#### Third Party Libraries
+- [colorama](https://pypi.org/project/colorama/) - JUSTIFICATION: To add color to the terminal and enhance user experience. 
+- [gspread](https://docs.gspread.org/en/latest/) - JUSTIFICATION: I used gspread to add and manipulate data in my Google spreadsheet and to interact with Google APIs
+- [google.oauth2.service_account](https://google-auth.readthedocs.io/en/master/) - JUSTIFICATION: module used to set up the authentification needed to access the Google API and connect my Service Account with the Credentials function.
 
 ## Features
 
@@ -282,7 +302,7 @@ The code passes the python validator with no error.
 | Game Screen |Player is informed that the AI has placed the compute ships on the computer board| ships placed | Works as expected |
 
 <details><summary>Screenshots</summary>
-<img src="/docs/testing/story4.jpg">
+<img src="/docs/testing/story4a.jpg">
 </details>
 
 5.  As a player, I want to be able to see the result of each turn so that I can keep track of the game.
@@ -294,12 +314,22 @@ The code passes the python validator with no error.
 </details>
 
 
-
 6.  As a player, I want to be able to choose the size of the board so that I can customize the game.
 
 | Game Screen |Player is informed that the AI has placed the compute ships on the computer board      | ships placed | Works as expected |
 
+<details><summary>Screenshots</summary>
+<img src="/docs/testing/story6.jpg">
+</details>
+
 7.  As the game owner, I want to implement a feature that prevents players from entering invalid usernames or passwords to prevent unauthorized access.
+
+| Main screen |Player is prompted to input credentials| if username or password blank or doen't meet the lenght criteria (for signup) it will be rejected| Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src="/docs/testing/story7.jpg">
+</details>
+
 
 
 8.  As the game owner, I want the application to be user friendly.
@@ -309,11 +339,73 @@ The code passes the python validator with no error.
 | Game phase|there is input validation at every phase of the game| the player is never second guessing | Works as expected |
 
 <details><summary>Screenshots</summary>
-<img src="docs/testing/user-story-2a.png">
-<img src="docs/testing/user-story-2b.png">
+<img src="docs/testing/story8a.jpg">
+<img src="docs/testing/story8b.jpg">
 </details>
 
 9. As a site owner I want the game to be playable on multiple devices.
 | Game ara |testing the game on multiple devices | games adapt to the resolution of the device | Works as expected |
 
+<details><summary>Screenshots</summary>
+<img src="docs/testing/story8a.jpg">
+</details>
 
+
+## Bugs
+
+| **Bug** | **Fix** |
+| ----------- | ----------- |
+| 'When the player hits an enemy ship the system displays corodinates already taken |   Not fixed - made many changes did not have enough time  |
+
+## Deployment
+
+### Heroku
+
+This application has been deployed from Github using Heroku. Here's how:
+
+1. Create an account at heroku.com
+2. Create a new app, add app name and your region
+3. Click on create app
+4. Go to "Settings"
+5. Under Config Vars, add your sensitive data (creds.json for example)
+6. For this project, I set buildpacks to and in that order.
+7. Go to "Deploy" and at "Deployment method", click on "Connect to Github"
+8. Enter your repository name and click on it when it shows below
+9. Choose the branch you want to buid your app from
+10. If desired, click on "Enable Automatic Deploys", which keeps the app up to date with your Github repository
+
+### Forking the GitHub Repository 
+
+Forking this GitHub repository allows you to make a copy of the original to view or make changes without affecting the original. You can do this by following these steps...
+
+1. Log into your GitHub account and find the [repository](https://github.com/bwogit/PP3_BATTLE).
+2. Click 'Fork' (last button on the top right of the repository page).
+3. You will then have a copy of the repository in your own GitHub account. 
+
+### Making a Local Clone
+
+1. Log into your GitHub account and find the [repository](https://github.com/bwogit/PP3_BATTLE).
+2. Click on the 'Code' button (next to 'Add file'). 
+3. To clone the repository using HTTPS, under clone with HTTPS, copy the link.
+4. Then open Git Bash.
+5. Change the current working directory to where you want the cloned directory to be made.
+6. In your IDE's terminal type 'git clone' followed by the URL you copied.
+7. Press Enter. 
+8. Your local clone will now be made.
+
+## Credits
+
+### Code
+
+- **Code Institute** - for git template IDE and heroku deployment instructions. but also for the general presentation of the game battleship this project is a variation of. 
+- Code Institute - for git template IDE and "Love Sandwiches - Essentials Project" which helped me with connecting the Google Spreadsheet to my project.
+- **Google** - for library [gspread](https://docs.gspread.org/en/latest/) and [APIS](https://developers.google.com/sheets/api)
+- How to install a Python module, eg. [email validation](https://pypi.org/project/email-validator/Installing)
+- [Stack overflow](https://stackoverflow.com/questions/75934801/simplifying-code-for-placing-ships-in-battleship-game-in-python-and-conducting-u) o help me undertsand random
+-[youtube](https://www.youtube.com/)
+- I was visually inspired by a couple of projects that i saw in the internet
+- Though various sources on the internet provided explainations and examples, the code was put together and tested by me.
+
+## Acknowledgements
+- Thank you Mo for yout professional guidance, words of encouragement and support!
+-- Code Institute community on Slack for resources and support
