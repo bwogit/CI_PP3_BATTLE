@@ -224,17 +224,96 @@ user story covered 4
 <img src="docs/features/coordinates.jpg">
 </details>
 
-### Feedback and user froendliness
+### Feedback and user friendliness
 At any stage of the game the player is provided with immediate feedback. The player can therefore keep track of score and generalyy what is happening in the game. I wan tehe game to be playable on various device sizes
 User story covered 5,9
-<details><summary>AI_generated.jpg</summary>
+<details><summary>feedback.jpg</summary>
 <img src="docs/features/feedback.jpg">
 </details>
-<details><summary>AI_generated.jpg</summary>
+<details><summary>results.jpg</summary>
 <img src="docs/features/won.jpg">
 </details>
-<details><summary>AI_generated.jpg</summary>
+<details><summary>Multi Platform.jpg</summary>
 <img src="docs/features/responsiveness.jpg">
 </details>
+
+## Testing
+
+### Python
+
+The code passes the python validator with no error.
+
+<details><summary>Validation</summary>
+<img src="docs/validation/python_validation.jpg">
+</details>
+
+### Testing user stories
+
+### Testing user stories
+
+1. As a new player, I want to be able to sign up so that I can play Battleship.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Main screen |      Select option 2       | User is prompted to enter a username and password | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src="/docs/testing/story1.jpg">
+</details>
+
+2. As a registered player, I want to be able to sign in so that I can start a new game.
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Main screen |      Select option 1       | User is prompted to enter a username and password | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src="/docs/testing/story2.jpg">
+</details>
+
+3.  As a player, I want to be able to rely on AI to mark my ships on the board so that Improve my skills.
+| Game Screen |Player is informed that the AI has placed the compute ships on the computer board      | ships placed | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src="/docs/testing/story3.jpg">
+</details>
+
+4.  As a player, I want to be able to choose the coordinates so that I can win the game.
+
+| Game Screen |Player is informed that the AI has placed the compute ships on the computer board| ships placed | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src="/docs/testing/story4.jpg">
+</details>
+
+5.  As a player, I want to be able to see the result of each turn so that I can keep track of the game.
+
+| Game Screen |Player makes his selection and validates| computer tells results| Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src="/docs/testing/story5.jpg">
+</details>
+
+
+
+6.  As a player, I want to be able to choose the size of the board so that I can customize the game.
+
+| Game Screen |Player is informed that the AI has placed the compute ships on the computer board      | ships placed | Works as expected |
+
+7.  As the game owner, I want to implement a feature that prevents players from entering invalid usernames or passwords to prevent unauthorized access.
+
+
+8.  As the game owner, I want the application to be user friendly.
+
+| Main Screen |there is clear choice 1 or 2 | Input validation so not to confuse the player | Works as expected |
+| login|whether you sign up or sign in everything is clear | Input validation so not to confuse the player | Works as expected |
+| Game phase|there is input validation at every phase of the game| the player is never second guessing | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src="docs/testing/user-story-2a.png">
+<img src="docs/testing/user-story-2b.png">
+</details>
+
+9. As a site owner I want the game to be playable on multiple devices.
+| Game ara |testing the game on multiple devices | games adapt to the resolution of the device | Works as expected |
 
 
