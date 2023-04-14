@@ -13,8 +13,7 @@
 2. [User Experience](#user-experience)
     1. [Target Audience](#target-audience)
     2. [User Stories](#user-stories)
-    3. [Scope](#scope)
-    4. [User Manual](#user-manual)
+    3. [User Manual](#user-manual)
 3. [Technical Design](#technical-design)
     1. [Flowchart](#flowchart)
     2. [Data Models](#data-models)   
@@ -393,13 +392,13 @@ This application has been deployed from Github using Heroku. Here's how:
 
 Forking this GitHub repository allows you to make a copy of the original to view or make changes without affecting the original. You can do this by following these steps...
 
-1. Log into your GitHub account and find the [repository](https://github.com/bwogit/PP3_BATTLE).
+1. Log into the GitHub account and find the [repository](https://github.com/bwogit/PP3_BATTLE).
 2. Click 'Fork' (last button on the top right of the repository page).
 3. You will then have a copy of the repository in your own GitHub account. 
 
 ### Making a Local Clone
 
-1. Log into your GitHub account and find the [repository](https://github.com/bwogit/PP3_BATTLE).
+1. Log into the GitHub account and find the [repository](https://github.com/bwogit/PP3_BATTLE).
 2. Click on the 'Code' button (next to 'Add file'). 
 3. To clone the repository using HTTPS, under clone with HTTPS, copy the link.
 4. Then open Git Bash.
@@ -415,7 +414,6 @@ Forking this GitHub repository allows you to make a copy of the original to view
 - **Code Institute** - for git template IDE and heroku deployment instructions. but also for the general presentation of the game battleship this project is a variation of. 
 - Code Institute - for git template IDE and "Love Sandwiches - Essentials Project" which helped me with connecting the Google Spreadsheet to my project.
 - **Google** - for library [gspread](https://docs.gspread.org/en/latest/) and [APIS](https://developers.google.com/sheets/api)
-- How to install a Python module, eg. [email validation](https://pypi.org/project/email-validator/Installing)
 - [Stack overflow](https://stackoverflow.com/questions/75934801/simplifying-code-for-placing-ships-in-battleship-game-in-python-and-conducting-u) o help me undertsand random
 -[youtube](https://www.youtube.com/)
 - I was visually inspired by a couple of projects that i saw in the internet
