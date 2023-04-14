@@ -212,19 +212,29 @@ User story covered 6,8
 
 ### Playing against AI
 I want to improve my skills therefore I relay on the randomness of the ship placement to improve my skills
+user story covered 3
 <details><summary>AI_generated.jpg</summary>
 <img src="docs/features/board_size.jpg">
 </details>
 
 ### choose my coordintes
 I want to be able to choose the coordinates of my oponent's ships location. I want the system to tell me when the coordinates that I have choses hav been slected before. I also want the system to tell me when my selection is out of bounds or the selection is illegal.
+user story covered 4
 <details><summary>AI_generated.jpg</summary>
-<img src="docs/features/board_size.jpg">
+<img src="docs/features/coordinates.jpg">
 </details>
 
-### Feedback
-At any stage of the game the player is provided with immediate feedback. The player can therefore keep track of score and generalyy what is happening in the game.
+### Feedback and user froendliness
+At any stage of the game the player is provided with immediate feedback. The player can therefore keep track of score and generalyy what is happening in the game. I wan tehe game to be playable on various device sizes
+User story covered 5,9
 <details><summary>AI_generated.jpg</summary>
-<img src="docs/features/board_size.jpg">
+<img src="docs/features/feedback.jpg">
 </details>
+<details><summary>AI_generated.jpg</summary>
+<img src="docs/features/won.jpg">
+</details>
+<details><summary>AI_generated.jpg</summary>
+<img src="docs/features/responsiveness.jpg">
+</details>
+
 
