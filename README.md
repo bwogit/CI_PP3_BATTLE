@@ -1,7 +1,7 @@
 # Battleship Game 
 (Developer: Jeremie Sandot)
 
-![Mockup FMS](docs/mockup/mockup.jpg)
+![Mockup](docs/mockup/mockup.jpg)
 
 [View live site](https://pp3-battleship.herokuapp.com/)
 
@@ -9,7 +9,7 @@
 
 1. [Project Goals](#project-goals)
     1. [User Goals](#user-goals)
-    2. [Site Owner Goals](#site-owner-goals)
+    2. [Owner Goals](#owner-goals)
 2. [User Experience](#user-experience)
     1. [Target Audience](#target-audience)
     2. [User Stories](#user-stories)
@@ -43,7 +43,7 @@
 - Play the game of Battleship with a player and a computer, place and track the location of       ships, and mark successful hits and misses on the board.
 - Provide user feedback and error messages for invalid inputs or actions, helping the user to understand how to interact with the program correctly.
 
-### User Goals
+### Owner Goals
 - Provide an engaging and enjoyable gameplay experience: 
 - Provide an interface to allow players to log in to the game.
 - Allow the player to play against AI
@@ -168,7 +168,7 @@ The following flowchart summarises the structure and logic of the application.
 
 ### Frameworks and Tools
 
-1. [Git](https://git-scm.com/) - Git was used for version control within VSCode to push the code to GitHub.
+1. [Git](https://git-scm.com/) - Git was used for version control to push the code to GitHub.
 2. [GitHub](https://github.com/) - GitHub was used as a remote repository to store project code. 
 5. [Google Sheets](https://www.google.co.uk/sheets/about/) - was used to store data outside of the program.  The vehicle catalogue and appraisal data stored in 2 separate sheets.
 6. [Google Cloud Platform](https://cloud.google.com/cloud-console/) - was used to manage access and permissions to the google services, google auth, sheets etc.
@@ -269,8 +269,6 @@ The code passes the python validator with no error.
 
 ### Testing user stories
 
-### Testing user stories
-
 1. As a new player, I want to be able to sign up so that I can play Battleship.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
@@ -282,9 +280,9 @@ The code passes the python validator with no error.
 </details>
 
 2. As a registered player, I want to be able to sign in so that I can start a new game.
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Main screen |      Select option 1       | User is prompted to enter a username and password | Works as expected |
+| **Feature** | **Action**   | **Expected Result** | **Actual Result** |
+|-------------|--------------|---------------------|-------------------|
+| Main screen |Select option | User is prompted to enter a username and password | Works as expected |
 
 <details><summary>Screenshots</summary>
 <img src="/docs/testing/story2.jpg">
